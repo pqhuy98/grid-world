@@ -1,0 +1,147 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "simple-import-sort",
+        "jest"
+    ],
+    "rules": {
+        // Don"t declare empty interfaces
+        // https://tiny.amazon.com/1e8xih0uj/githtypetypeblobmainpackesli
+        "@typescript-eslint/no-empty-interface": [
+            "error",
+            {
+                "allowSingleExtends": false
+            }
+        ],
+        // `Any` type should be avoided
+        // https://tiny.amazon.com/1im3hw55g/githtypetypeblobmainpackesli
+        "@typescript-eslint/no-explicit-any": 2,
+        // Group and sort the imports in alphabetical order
+        // https://github.com/lydell/eslint-plugin-simple-import-sort
+        "simple-import-sort/imports": "error",
+        // Maximum line length is 140 characters
+        // https://eslint.org/docs/rules/max-len
+        "max-len": [
+            1,
+            140,
+            2,
+            {
+                "ignorePattern": "^import|^export"
+            }
+        ],
+        // Indentation of 4 spaces
+        // https://github.com/lydell/indent
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        // Use string template literals
+        // https://eslint.org/docs/rules/prefer-template
+        "prefer-template": "error",
+        // No dangling commas
+        // https://eslint.org/docs/rules/comma-dangle
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        // Comma always at the end
+        // https://eslint.org/docs/rules/comma-style
+        "comma-style": [
+            "error",
+            "last"
+        ],
+        // Always use curly braces for blocks
+        // https://eslint.org/docs/rules/brace-style
+        "brace-style": [
+            "error",
+            "1tbs"
+        ],
+        // Spaces when declaring objects, dereferences, or imports
+        // https://eslint.org/docs/rules/object-curly-spacing
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        // Lambda spacing
+        // https://eslint.org/docs/rules/arrow-spacing
+        "arrow-spacing": [
+            "error",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        // Consistent function parameter (and return type) alignment
+        // https://eslint.org/docs/rules/function-paren-newline
+        "function-paren-newline": [
+            "error",
+            "consistent"
+        ],
+        // Space before function class or keyword blocks
+        // https://eslint.org/docs/rules/space-before-blocks
+        "space-before-blocks": [
+            "error",
+            {
+                "functions": "always",
+                "keywords": "always",
+                "classes": "always"
+            }
+        ],
+        // No more than 2 empty lines
+        // https://eslint.org/docs/rules/no-multiple-empty-lines
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxEOF": 0
+            }
+        ],
+        // Always use single quotes
+        // https://eslint.org/docs/rules/quotes
+        "quotes": [
+            "error",
+            "single",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        // No trailing whitespace characters in the code
+        // https://eslint.org/docs/rules/no-trailing-spaces
+        "no-trailing-spaces": [
+            "error",
+            {
+                "ignoreComments": false,
+                "skipBlankLines": true
+            }
+        ],
+        // No semicolons in the code
+        // https://eslint.org/docs/rules/semi
+        "semi": [
+            "error",
+            "never"
+        ],
+        // ========================================
+        //      CDKDashboardBuddy overrides
+        // ========================================
+        // Buddy is a library, hence it has unused (public) vars
+        "no-unused-vars": 0
+    }
+}
