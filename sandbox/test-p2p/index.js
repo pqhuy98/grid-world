@@ -66,7 +66,7 @@ document.getElementById("new-client").onclick = async () => {
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 7; j++) {
             await sleep(500);
-            window.open('http://127.0.0.1:5500/', '' + Math.random(), `height=50,width=25,top=${500 + i * 150},left=${j * 150}`)
+            window.open(window.location.href, '' + Math.random(), `height=50,width=25,top=${500 + i * 150},left=${j * 150}`)
         }
     }
 }
